@@ -1,23 +1,19 @@
-function position (primeiroLugar, segundoLugar,terceiroLugar) {
+function position(primeiroLugar, segundoLugar, terceiroLugar) {
 
-    const corrida = ['Daniel', 'Rafael', 'Manoel']
-
-    for (i = 0; i < corrida.length; i++) {
-        if (corrida[i] = 'Daniel') {
-           primeiroLugar = corrida[i]
-        }  if (corrida[i] = 'Rafael') {
-          segundoLugar = corrida[i]
-       }  if (corrida[i] = 'Manoel') {
-        terceiroLugar = corrida[i]
+   let corrida = [primeiroLugar, segundoLugar, terceiroLugar]
+ 
+ 
+   for (i = 0; i < corrida.length; i++) {
+     if (corrida[i] == 'Daniel' && i > 0) { 
+         let anterior = corrida[i - 1];
+         corrida[i - 1] = corrida[i] 
+         corrida[i] = anterior;
      }
-
-
-  }
-   console.log(primeiroLugar + ' Este é o primeiro lugar') 
-   console.log(segundoLugar + ' Este é o segundo lugar')  
-   console.log(terceiroLugar + ' Este é o segundo lugar') 
-   
-    
+   }
+   console.log(corrida)
+ 
  }
-
- position()
+ 
+ position('Rafael', 'Miguel', 'Daniel');
+ position('Daniel', 'Rafael', 'Miguel')
+ position('Rafael', 'Daniel', 'Miguel')
